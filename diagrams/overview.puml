@@ -1,0 +1,24 @@
+@startuml
+
+title "1) Communication to intercept Challenge"
+
+participant "Source Service" as s
+participant "M2S" as m
+participant "Target Service" as t
+
+note left
+    All requests are via HTTP/HTTPS protocol
+end note
+s <-> t
+
+newpage "2.1) Lower environment with Mock service in recorder mode"
+
+s -> m
+m <-> t
+m -> s
+
+newpage "2.2) Lower environment with Mock service in mocking mode"
+
+s <-> m
+
+@enduml

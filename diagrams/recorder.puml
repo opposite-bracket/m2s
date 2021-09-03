@@ -1,0 +1,14 @@
+@startuml
+
+participant "Service Source" as s
+participant Recorder as r
+participant "Service Target" as t
+
+s -> r: Make request
+alt mock-target is available in header
+    r <-> t: Make request to target
+end
+r -> r: log request & response if available
+r -> s: retrieve data
+
+@enduml
