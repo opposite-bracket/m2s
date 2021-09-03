@@ -1,2 +1,0 @@
-mode: recorder # recorder|mock
-recorder_log_path: /tmp/mock # path output that records
